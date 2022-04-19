@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cart</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="icon" href="images/OLX-Logo.png" type="icon" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="btncss.css">
+
+</head>
+
+<body>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">E-commerce</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <!-- <li class="nav-item active " >
+            <a class="nav-link" href="#" id="greetUser"></a>
+          </li> -->
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="User Profile.html" id="userProfile"></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" class="favourite" href="favourite.html" id="favourite">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="postad" href="submitad.html">Post A Product</a>
+                    </li>
+                    <li class="nav-item" class="inActiveUser" id="inActiveUser">
+                        <a class="nav-link" href="signin.html">Sign In/Register</a>
+                    </li>
+                    <li class="activeUser nav-item" id="activeUser">
+                        <a class="nav-link" href="index.html" onclick="signOut()">Sign Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h1 id="suh" class="suh text-center text-dark">products in Cart</h1>
+
+
+
+    <!-- <button type="button" class="btn btn-primary" onclick="signOut()">Sign Out</button> -->
+    <div class="container" id="container" style="margin-bottom: 100px;">
+        <div class="row" id="row">
+
+        </div>
+    </div>
+    <div class="cartTotal" id="cartTotal"></div>
+    <div class="orderBtnContainer">
+        <button class="order"><span class="default">Complete Order</span><span class="success">  
+            <svg viewbox="0 0 12 10">
+              <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+            </svg></span>
+          <div class="box"></div>
+          <div class="truck">
+            <div class="back"></div>
+            <div class="front">
+              <div class="window"></div>
+            </div>
+            <div class="light top"></div>
+            <div class="light bottom"></div>
+          </div>
+          <div class="lines"></div>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="grid py-5 bg-dark">
+        <div class="container">
+            <address style="color:#f0f5f5;font-family:Times New Roman;Text-Align:center">
+                   Contact Us<br>
+                   Cell No: 09111111<br>
+                   Email:sdg@astu.edu.et
+
+                    </address>
+            <p class="m-0 text-center text-white"></p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- main -->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCzPEhkUwgTiJu2pS69ao7YdnHu-0oVn3Q",
+            authDomain: "olx-pakistan-8800e.firebaseapp.com",
+            databaseURL: "https://olx-pakistan-8800e.firebaseio.com",
+            projectId: "olx-pakistan-8800e",
+            storageBucket: "gs://olx-pakistan-8800e.appspot.com",
+            messagingSenderId: "441355874801"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="favourite.js">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- <script src="signup.js"></script>
+    <script src="signin.js"></script>
+    <script src="submitad.js"></script> -->
+    <!-- <script src="User Profile.js"></script> -->
+    <!-- <script src="script.js"></script> -->
+    <script src="btnjs.js"></script>
+</body>
+
+</html>
